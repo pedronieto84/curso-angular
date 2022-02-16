@@ -1,3 +1,7 @@
 
-<p>{{persona?.apellido}}</p>
+<p>Suma: {{3+2}}</p>
+<p>String Methods: {{persona.apellido.toUpperCase()}}</p>
+<p>String Methods: {{persona.apellido.toLowerCase()}}</p>
+<p>Ternario: {{ persona.edad > 38 ? 'viejuno' : 'joven'}} </p>
+<p>{{ restarleEdad(persona.edad, 5) }}</p>
 <router-outlet></router-outlet>
