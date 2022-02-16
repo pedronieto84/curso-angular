@@ -1,5 +1,6 @@
 <div >
 
-    <p >Email: {{loginDataInput?.email}}</p>
-    <p >Password: {{loginDataInput?.password}}</p>
+    <input #email />
+    <input #password />
+    <button (click)="enviarPadre(email.value, password.value)">ENVIAR A PADRE</button>
 </div>

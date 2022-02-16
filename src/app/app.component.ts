@@ -9,8 +9,7 @@ import { LoginObject } from './interfaces/interfaces';
 })
 export class AppComponent {
 
-  loginDataFromFather: LoginObject = {
-    email:'pedro.nieto.sanchez@gmail.com',
-    password: '123456'
+  capturarEventoDesdeElHijo(ev:LoginObject){
+    console.log('evento Capturado desde el hijo',ev);
   }
 }
