@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginObject } from './interfaces/interfaces';
 
 
 @Component({
@@ -6,17 +7,10 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
+export class AppComponent {
 
-  etiquetaQueVaCambiando = ''
-
-  ngOnInit(): void {
-    setInterval(()=>{
-      this.etiquetaQueVaCambiando += 'a'
-    },1000)
-  }
-
-  logNombre(nombre: any){
-    console.log(nombre);
+  loginDataFromFather: LoginObject = {
+    email:'pedro.nieto.sanchez@gmail.com',
+    password: '123456'
   }
 }
