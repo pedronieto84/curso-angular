@@ -8,8 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  clicked: boolean = true // Cambiar el valor para enable/disable
-  
-
+  gestionarClick(){
+    console.log('gestionarClick');
+  }
  
 }
