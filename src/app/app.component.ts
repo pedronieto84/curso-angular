@@ -8,8 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  gestionarClick(){
-    console.log('gestionarClick');
-  }
+  valor = 2
  
 }
