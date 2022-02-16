@@ -1,9 +1,17 @@
 
 
-<input type="text" #nombre />
-<p class="tal" #etiquetaP>Etiqueta P</p>
+
 <p #etiquetaCambiante>{{etiquetaQueVaCambiando}}</p>
 
-<button (click)="logNombre(nombre.value)">LOGUEAR Input</button>
-<button (click)="logNombre(etiquetaP.innerText)">LOGUEAR P</button>
+
 <button (click)="logNombre(etiquetaCambiante.innerText)">LOGUEAR etiquetaCambiante</button>
+
+<p>{{etiquetaCambiante.innerText.length}}</p>
+
+
+
+<p>{{etiquetaCambiante.innerText.length > 5 ? 'es Muy Grande' : 'es muy pequeña'}}</p>
+
+<p>{{
+  
+  (etiquetaCambiante.innerText.length > 5 ? true : false)? 'es enorme': 'es diminuta'}}</p>
