@@ -8,11 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit{
 
+  etiquetaQueVaCambiando = ''
+
   ngOnInit(): void {
     setInterval(()=>{
-      this.valor = this.valor * 2
-    }, 2000 )
+      this.etiquetaQueVaCambiando += 'a'
+    },1000)
   }
 
-  valor = 2
+  logNombre(nombre: any){
+    console.log(nombre);
+  }
 }

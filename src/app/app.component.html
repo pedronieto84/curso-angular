@@ -1,6 +1,9 @@
 
 
-<input [(ngModel)]="valor" />
+<input type="text" #nombre />
+<p class="tal" #etiquetaP>Etiqueta P</p>
+<p #etiquetaCambiante>{{etiquetaQueVaCambiando}}</p>
 
-
-<h1> {{valor}} </h1>
+<button (click)="logNombre(nombre.value)">LOGUEAR Input</button>
+<button (click)="logNombre(etiquetaP.innerText)">LOGUEAR P</button>
+<button (click)="logNombre(etiquetaCambiante.innerText)">LOGUEAR etiquetaCambiante</button>
