@@ -1,7 +1,14 @@
 
+
 <ul>
-    <li *ngFor="let item of items; index as i;">
-        {{item}} tiene el indice {{i}}
-    </li>
+    <!--Con el palito defino que viene una pipe-->
+    <li>  {{ today | date: "MM/dd/yy"}}</li>
+    <!--Con los dos puntos les paso parámetros-->
+    <li>  {{ 234.234234 | number: '1.2-2'}}</li>
+    <li>  {{ 'Pedro' | uppercase}}</li>
+    <li>  {{ 345 | currency: 'USD'}}</li>
+    <!--Puedo concatenar múltiples pipes-->
+    <li>  {{ 345 | number:'1.2-2' | currency: 'USD'}}</li>
+
 </ul>
 

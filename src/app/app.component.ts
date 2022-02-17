@@ -9,5 +9,5 @@ import { LoginObject } from './interfaces/interfaces';
 })
 export class AppComponent  {
 
-  items = ['a','b', 'c', 'd']
+  today = new Date()
 }
