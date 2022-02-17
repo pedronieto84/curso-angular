@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
+import { ModuleDeleteModule } from '../modules/module-delete/module-delete.module';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: ModuleDeleteModule
 })
 export class DataService {
 
