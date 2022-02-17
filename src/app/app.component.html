@@ -1,7 +1,7 @@
 <ul>
  
     <li *ngFor="let a of animales">
-        <a [routerLink]="['/animales', a]">{{a}}</a>
+        <a (click)="navegar('/animales', a)">{{a}}</a>
     </li>
 </ul>
 <router-outlet></router-outlet>
