@@ -11,6 +11,7 @@ import { AnimalesComponent } from './components/animales/animales.component';
 import { MamiferoComponent } from './components/mamifero/mamifero.component';
 import { ReptilComponent } from './components/reptil/reptil.component';
 import { DetalleAnimalComponent } from './components/detalle-animal/detalle-animal.component';
+import { ErrorComponent } from './components/error/error.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,8 @@ import { DetalleAnimalComponent } from './components/detalle-animal/detalle-anim
     AnimalesComponent,
     MamiferoComponent,
     ReptilComponent,
-    DetalleAnimalComponent
+    DetalleAnimalComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
