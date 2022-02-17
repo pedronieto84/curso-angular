@@ -1,8 +1,7 @@
 <ul>
-  <li routerLink="/">HOME</li>
-  <li routerLink="/animales">ANIMALES</li>
-
-  <li routerLink="/animales/mamifero">MAMIFERO</li>
-  <li routerLink="/animales/reptil">REPTIL</li>
+ 
+    <li *ngFor="let a of animales">
+        <a [routerLink]="['/animales', a]">{{a}}</a>
+    </li>
 </ul>
-<router-outlet></router-outlet>
+<router-outlet ></router-outlet>

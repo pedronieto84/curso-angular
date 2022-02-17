@@ -9,10 +9,13 @@ import { DataService } from './services/data/data.service'
 })
 export class AppComponent  {
 
+  animales = [
+    'perro', 'gato', 'pajaro', 'leon'
+  ]
   
-  constructor(private data: DataService){}
+  constructor(){}
 
-  getData(url:string){
-    return this.data.getFromUrl(url)
-  }
+
+
+  
 }

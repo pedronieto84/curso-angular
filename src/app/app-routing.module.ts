@@ -7,19 +7,16 @@ import { ReptilComponent } from './components/reptil/reptil.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'animales', component: AnimalesComponent,
-  children:[
+  {
+    path: 'animales',
+    component: AnimalesComponent,
+    children: [
       {
-          path: 'mamifero',
-          component: MamiferoComponent
+        path: ':nombre',
+        component: MamiferoComponent,
       },
-      {
-          path: 'reptil',
-          component: ReptilComponent
-      }
-  
-  ]
-},
+    ],
+  },
 ]; // Aquí definimos las rutas
 
 @NgModule({
