@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AumentarDirective } from './directives/aumentar.directive';
+import { MultiplyByPipe } from './pipes/multiply-by.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    AumentarDirective
+    AumentarDirective,
+    MultiplyByPipe
   ],
   imports: [
     BrowserModule,
