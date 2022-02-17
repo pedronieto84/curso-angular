@@ -1,10 +1,11 @@
-import { Directive, HostBinding, HostListener } from '@angular/core';
+import { AfterViewInit, Directive, HostBinding, HostListener, Input, OnInit } from '@angular/core';
 
 @Directive({
   selector: '[appAumentar]'
 })
-export class AumentarDirective {
+export class AumentarDirective implements AfterViewInit {
   
+  @Input() defaultColor!:string;
   possibleColors = [
     'darksalmon',
     'hotpink',
@@ -16,6 +17,11 @@ export class AumentarDirective {
     'blanchedalmond',
     'lightslategrey'
   ];
+
+  ngAfterViewInit(){
+    console.log('afterViewInit');
+    this.borderColor = this.defaultColor
+  }
 
   @HostBinding('style.color') color!: string;
   @HostBinding('style.border-color') borderColor!: string;
