@@ -1,15 +1,29 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { Observable } from 'rxjs';
+import {
+  ActivatedRouteSnapshot,
+  CanActivate,
+  RouterStateSnapshot,
+  UrlTree,
+} from '@angular/router';
+import { Observable, timer, map, tap } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AdminGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return false;
+    state: RouterStateSnapshot
+  ):
+    | Observable<boolean | UrlTree>
+    | Promise<boolean | UrlTree>
+    | boolean
+    | UrlTree {
+    return timer(1000).pipe(
+      map((v) => {
+        return !!v;
+      }),
+      tap((v) => prompt('No puedes entrar'))
+    );
   }
-  
 }
