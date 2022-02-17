@@ -8,11 +8,15 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { InterceptorsService } from './services/interceptors/interceptors.service';
 import { HomeComponent } from './components/home/home.component';
 import { AnimalesComponent } from './components/animales/animales.component';
+import { MamiferoComponent } from './components/mamifero/mamifero.component';
+import { ReptilComponent } from './components/reptil/reptil.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AnimalesComponent
+    AnimalesComponent,
+    MamiferoComponent,
+    ReptilComponent
   ],
   imports: [
     BrowserModule,
