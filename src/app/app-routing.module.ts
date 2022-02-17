@@ -4,6 +4,7 @@ import { AnimalesComponent } from './components/animales/animales.component';
 import { DetalleAnimalComponent } from './components/detalle-animal/detalle-animal.component';
 import { ErrorComponent } from './components/error/error.component';
 import { HomeComponent } from './components/home/home.component';
+import { AdminGuard } from './guards/admin.guard';
 
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
   {
     path: 'animales',
     component: AnimalesComponent,
+    canActivate: [AdminGuard],
     children: [
       {
         path: ':nombre',
