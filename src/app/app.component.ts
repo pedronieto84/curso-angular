@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginObject } from './interfaces/interfaces';
 
 
 @Component({
