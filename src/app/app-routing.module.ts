@@ -4,8 +4,7 @@ import { AnimalesComponent } from './components/animales/animales.component';
 import { DetalleAnimalComponent } from './components/detalle-animal/detalle-animal.component';
 import { ErrorComponent } from './components/error/error.component';
 import { HomeComponent } from './components/home/home.component';
-import { MamiferoComponent } from './components/mamifero/mamifero.component';
-import { ReptilComponent } from './components/reptil/reptil.component';
+
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -19,9 +18,10 @@ const routes: Routes = [
       },
     ],
   },
+  
   {
     path: '**',
-    component: ErrorComponent,
+    redirectTo: '/',
   }, // Cuidado con no poner esto al final porque puede dar error
 ]; // Aquí definimos las rutas
 
