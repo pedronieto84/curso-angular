@@ -9,7 +9,5 @@ import { LoginObject } from './interfaces/interfaces';
 })
 export class AppComponent {
 
-  capturarEventoDesdeElHijo(ev:LoginObject){
-    console.log('evento Capturado desde el hijo',ev);
-  }
+  
 }

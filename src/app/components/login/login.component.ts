@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { LoginObject } from 'src/app/interfaces/interfaces';
+
+import { DataService } from 'src/app/services/data.service';
 
 
 @Component({
@@ -9,10 +10,13 @@ import { LoginObject } from 'src/app/interfaces/interfaces';
 })
 export class LoginComponent {
 
-  @Output() eventoDesdeHijo =  new EventEmitter<LoginObject>()
-  
-  enviarPadre(email:string, password:string){
-      this.eventoDesdeHijo.emit({email, password})
+  constructor(private data: DataService){
   }
+
+  enviarPadre(mensaje:string){
+    console.log('enviarPadre');
+    this.data.cambiarMensaje(mensaje)
+  }
+
 
 }

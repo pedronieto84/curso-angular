@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-register',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  mensaje:string = ''
 
-  ngOnInit(): void {
-  }
+  constructor(private data :DataService) {
+
+      
+   }
+
+   ngOnInit(){
+     console.log('ngOnINit');
+    this.data.mensajeActual.subscribe((mensaje)=>{
+      console.log(mensaje);
+      
+      this.mensaje = mensaje
+    })
+   }
+
+  
 
 }
