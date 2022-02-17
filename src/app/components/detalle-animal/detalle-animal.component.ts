@@ -11,9 +11,9 @@ export class DetalleAnimalComponent implements OnInit {
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe((params) => {
-      console.log('params', params);
-      this.animal = params.get('nombre') as string;
+    this.route.queryParams
+    .subscribe((params) => {
+      console.log('queryParams', params);
     });
   }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { DataService } from './services/data/data.service';
+
 
 @Component({
   selector: 'app-root',
@@ -11,15 +11,15 @@ export class AppComponent {
   animales = ['perro', 'gato', 'pajaro', 'leon'];
 
   constructor(private router: Router) {}
- // Router es para navegar programáticamente
- 
+  // Router es para navegar programáticamente
+
   navegar(url: string, url2: string) {
-    const confirmar = prompt('Password?');
-    const password = 1234;
-    if (confirmar === password.toString()) {
-      this.router.navigate([url, url2]);
-    } else {
-      return;
-    }
+      this.router.navigate([url, url2], {
+        queryParams: {
+          tipo: 'mamifero',
+          patas: '4',
+        }
+      });
+    
   }
 }
