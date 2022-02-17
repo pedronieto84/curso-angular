@@ -1,10 +1,17 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ModuleDeleteModule } from '../modules/module-delete/module-delete.module';
 
 @Injectable({
-  providedIn: ModuleDeleteModule
+  providedIn: 'root'
 })
 export class DataService {
 
-  constructor() { }
+  constructor( private http: HttpClient ) { 
+  }
+
+  getFromUrl(url:string){
+    this.http.get(url).subscribe((res)=>{
+        console.log(res);
+    })
+  }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from './services/data.service';
 
 
 @Component({
@@ -6,13 +7,12 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent  {
 
-  show = true;
-  mensaje = ''
-  ngOnInit(){
-    setInterval(()=>{
-      this.mensaje += 'a'
-    }, 1000)
+  
+  constructor(private data: DataService){}
+
+  getData(url:string){
+    return this.data.getFromUrl(url)
   }
 }
