@@ -6,9 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { InterceptorsService } from './services/interceptors/interceptors.service';
+import { HomeComponent } from './components/home/home.component';
+import { AnimalesComponent } from './components/animales/animales.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    AnimalesComponent
   ],
   imports: [
     BrowserModule,
