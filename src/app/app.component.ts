@@ -9,28 +9,13 @@ import { LoginObject } from './interfaces/interfaces';
 })
 export class AppComponent  {
 
-  @ViewChild('nombre', {static: false}) nombre:ElementRef | any
-  @ViewChild('status', {static: false}) status:ElementRef | any
+  numero:number = 0
 
-  show=false
-  arrayData = [
-    {nombre: 'Tobby',
-      status: 'perro'},
-      {
-        nombre: 'Lua',
-        status: 'gato'
-      }
-
-  ]
-
-  addAnimal(nombre:string, status:string){
-    this.arrayData.push({nombre, status})
-    this.nombre.nativeElement.value = ''
-    this.status.nativeElement.value = ''
-    
+  sumar(){
+    this.numero += 1
   }
 
-  resetear(){
-   this.arrayData = []
+  restar(){
+    this.numero -= 1
   }
 }

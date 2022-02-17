@@ -1,2 +1,10 @@
 
-<input type="text" appAumentar [defaultColor]="'red'" />
+<button (click)="sumar()">SUMAR 1</button>
+
+<button (click)="restar()">RESTAR 1</button>
+
+<p>{{numero}}</p>
+<br/>
+<p *ngIf="numero %2 ==0; else esImpar">Es un número par </p>
+<br/>
+<ng-template #esImpar>Es un número impar</ng-template>
