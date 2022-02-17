@@ -14,4 +14,24 @@ export class DataService {
         console.log(res);
     })
   }
+
+  post(url:string){
+    this.http.post(url, {data: 'dataOnBOdy'}).subscribe((res)=>{
+        console.log(res);
+    })
+  }
+
+  update(url:string){
+    this.http.put(url, { data: 'dataToUpdate' }).subscribe((res)=>{
+        console.log(res);
+    })
+  }
+
+  delete(url:string){
+    this.http.delete(url).subscribe((res)=>{
+        console.log(res);
+    })
+  }
+
+  
 }
