@@ -5,7 +5,7 @@ Status<input #status />
 <!--AQUÍ LA PODEMOS VER EN ACCIÓN-->
 
 <ul *ngFor="let item of arrayData">
-    <li>
+    <li [class]="arrayData.length > 3 ? 'backgroundRed' : 'backgroundBlue'">
         <p>{{item.nombre}} - {{item.status}}</p>
     </li>
 </ul>
