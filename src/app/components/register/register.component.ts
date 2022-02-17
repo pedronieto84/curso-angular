@@ -1,10 +1,11 @@
-import { AfterViewChecked, AfterViewInit, Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { AfterViewChecked, AfterViewInit, ChangeDetectionStrategy, Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  styleUrls: ['./register.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RegisterComponent implements OnInit, AfterViewInit, OnChanges, AfterViewChecked, OnDestroy {
 
