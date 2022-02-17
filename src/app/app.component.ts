@@ -11,14 +11,12 @@ import { DataService } from './services/data.service';
 })
 export class AppComponent  {
 
-  dataObservable$: Observable<string>;
-
-  constructor(private data: DataService){
-    this.dataObservable$ = this.data.mensajeActual
-  }
+ primerValor = 0
+ segundoValor = 0
 
   
-  cambiarMensaje(mensaje:string){
-    this.data.cambiarMensaje(mensaje)
+  capturar(primerValor: string, segundoValor:string){
+    this.primerValor = parseInt(primerValor)
+    this.segundoValor = parseInt(segundoValor)
   }
 }

@@ -1,9 +1,7 @@
 
-<input #mensaje/>
-<button (click)="cambiarMensaje(mensaje.value)">ACTUALIZAR</button>
-<ul>
-    <!--Async pipe se subscribe y dessubscribe a Observables-->
-    <li>  {{ dataObservable$ | async }}</li>
-     <!--Cuando son promesas hace el .then y nos vierte el response-->
-</ul>
+<input #number/>
+<input #multiplicador/>
+<button (click)="capturar(number.value, multiplicador.value)">Capturar</button>
+
+<h1>{{primerValor | multiplyBy: segundoValor }}</h1>
 
