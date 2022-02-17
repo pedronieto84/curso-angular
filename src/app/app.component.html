@@ -1,13 +1,2 @@
 
-Nombre<input #nombre/>
-Status<input #status />
-<button (click)="addAnimal(nombre.value,status.value)">Añadir animal</button>
-<!--AQUÍ LA PODEMOS VER EN ACCIÓN-->
-
-<ul *ngFor="let item of arrayData">
-    <li [style]="{'background-color': (arrayData.length > 3 ? 'red' : 'blue' )} " >
-        <p>{{item.nombre}} - {{item.status}}</p>
-    </li>
-</ul>
-
-<button (click)="resetear()">RESETEAR</button>
+<input type="text" appAumentar />
