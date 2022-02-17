@@ -1,4 +1,13 @@
 
-<button (click)="show = !show">MOSTRAR HIJO</button>
+Nombre<input #nombre/>
+Status<input #status />
+<button (click)="addAnimal(nombre.value,status.value)">Añadir animal</button>
 <!--AQUÍ LA PODEMOS VER EN ACCIÓN-->
-<app-register *ngIf="show" [mensaje]="mensaje"></app-register>
+
+<ul *ngFor="let item of arrayData">
+    <li>
+        <p>{{item.nombre}} - {{item.status}}</p>
+    </li>
+</ul>
+
+<button (click)="resetear()">RESETEAR</button>
