@@ -7,7 +7,13 @@ import { LoginObject } from './interfaces/interfaces';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
-  
+  show = true;
+  mensaje = ''
+  ngOnInit(){
+    setInterval(()=>{
+      this.mensaje += 'a'
+    }, 1000)
+  }
 }

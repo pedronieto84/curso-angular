@@ -1,5 +1,3 @@
 
-
-<app-login></app-login>
-<app-register></app-register>
-<app-register></app-register>
+<button (click)="show = !show">MOSTRAR HIJO</button>
+<app-register *ngIf="show" [mensaje]="mensaje"></app-register>
