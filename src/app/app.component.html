@@ -1,14 +1,9 @@
 
-
+<input #mensaje/>
+<button (click)="cambiarMensaje(mensaje.value)">ACTUALIZAR</button>
 <ul>
-    <!--Con el palito defino que viene una pipe-->
-    <li>  {{ today | date: "MM/dd/yy"}}</li>
-    <!--Con los dos puntos les paso parámetros-->
-    <li>  {{ 234.234234 | number: '1.2-2'}}</li>
-    <li>  {{ 'Pedro' | uppercase}}</li>
-    <li>  {{ 345 | currency: 'USD'}}</li>
-    <!--Puedo concatenar múltiples pipes-->
-    <li>  {{ 345 | number:'1.2-2' | currency: 'USD'}}</li>
-
+    <!--Async pipe se subscribe y dessubscribe a Observables-->
+    <li>  {{ dataObservable$ | async }}</li>
+     <!--Cuando son promesas hace el .then y nos vierte el response-->
 </ul>
 
