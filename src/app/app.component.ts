@@ -9,13 +9,5 @@ import { LoginObject } from './interfaces/interfaces';
 })
 export class AppComponent  {
 
-  numero:number = 0
-
-  sumar(){
-    this.numero += 1
-  }
-
-  restar(){
-    this.numero -= 1
-  }
+  items = ['a','b', 'c', 'd']
 }

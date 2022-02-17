@@ -1,10 +1,7 @@
 
-<button (click)="sumar()">SUMAR 1</button>
+<ul>
+    <li *ngFor="let item of items; index as i;">
+        {{item}} tiene el indice {{i}}
+    </li>
+</ul>
 
-<button (click)="restar()">RESTAR 1</button>
-
-<p>{{numero}}</p>
-<br/>
-<p *ngIf="numero %2 ==0; else esImpar">Es un número par </p>
-<br/>
-<ng-template #esImpar>Es un número impar</ng-template>
