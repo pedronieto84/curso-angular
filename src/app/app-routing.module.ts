@@ -5,6 +5,7 @@ import { DetalleAnimalComponent } from './components/detalle-animal/detalle-anim
 import { ErrorComponent } from './components/error/error.component';
 import { HomeComponent } from './components/home/home.component';
 import { AdminGuard } from './guards/admin.guard';
+import { PreloadGuard } from './guards/preload.guard';
 
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
       {
         path: ':nombre',
         component: DetalleAnimalComponent,
+        resolve: [PreloadGuard]
       },
     ],
   },

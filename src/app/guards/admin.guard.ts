@@ -21,9 +21,9 @@ export class AdminGuard implements CanActivate {
     | UrlTree {
     return timer(1000).pipe(
       map((v) => {
-        return !!v;
+        return true
       }),
-      tap((v) => prompt('No puedes entrar'))
+      //tap((v) => prompt('No puedes entrar'))
     );
   }
 }
