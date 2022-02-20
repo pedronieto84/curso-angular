@@ -6,18 +6,9 @@ import { NestedFormComponent } from './nested-form/nested-form.component';
 import { SubmitFormComponent } from './submit-form/submit-form.component';
 import { ValidFormComponent } from './valid-form/valid-form.component';
 
-
-
 @NgModule({
-  declarations: [
-    ArrayFormComponent,
-    SubmitFormComponent,
-    ValidFormComponent
-  ],
-  imports: [
-    CommonModule
-  ],
-  exports: [
-  ]
+  declarations: [SubmitFormComponent, ValidFormComponent],
+  imports: [CommonModule],
+  exports: [],
 })
-export class FormsModule { }
+export class FormsModule {}

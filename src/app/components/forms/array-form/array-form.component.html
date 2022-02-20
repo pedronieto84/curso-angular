@@ -1,1 +1,27 @@
-<p>array-form works!</p>
+<h1>ARRAY FORMS</h1>
+<form [formGroup]="myForm">
+  <mat-form-field>
+    <input matInput placeholder="email" formControlName="email" />
+  </mat-form-field>
+
+  <div formArrayName="phones">
+      <h2>PHONES</h2>
+    <div
+      *ngFor="let phone of phoneForms.controls; let i = index"
+      [formGroupName]="i"
+    >
+      <mat-form-field>
+        <input matInput formControlName="prefijo" placeholder="Prefijo" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput formControlName="numero" placeholder="Número" />
+      </mat-form-field>
+
+      <button mat-raised color="warn" (click)="deletePhone(i)">ELIMINAR</button>
+    </div>
+  </div>
+  <button mat-raised color="primary" (click)="addPhone()">AÑADIR</button>
+</form>
+
+<h1>Formulario {{ myForm.value | json }}</h1>
