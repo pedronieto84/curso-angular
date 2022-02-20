@@ -1,1 +1,22 @@
 <p>submit-form works!</p>
+
+<div class="padding">
+    <form [formGroup]="myForm" [hidden]="success" (ngSubmit)="submitHandler()">
+        <hr>
+        <mat-form-field>
+            <input matInput placeholder="email" formControlName="email">
+        </mat-form-field>
+
+        <mat-form-field>
+            <textarea matInput placeholder="Tu mensaje..." formControlName="mensaje"></textarea>
+        </mat-form-field>
+<hr>
+            <button matButton color="primary" type="submit" [disabled]="myForm.invalid">ENVIAR</button>
+    </form>
+</div>
+
+<div *ngIf="success" class="notification is-success">DATOS RECIBIDOS</div>
+
+<div *ngIf="loading" class="notification is-loading">ENVIANDO DATOS</div>
+
+<div *ngIf="error" class="notification is-error">ERROR</div>
