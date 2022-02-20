@@ -1,9 +1,17 @@
 
-<button *ngFor="let r of routesArray" 
-mat-button 
-[routerLinkActiveOptions]="{ exact: true }"
-[routerLink]="r.url" 
-routerLinkActive="active" >{{r.displayName}}</button>
+<h1>FORMULARIO TEMPLATE DRIVEN</h1>
 
+<div>
+    Email: <input #email > <!-- O Con el NG MODEL PONER EJEMPLO-->
+</div>
+<span *ngIf="emailInvalido"></span>
+<div>
+    Password: <input #password >
+</div>
+<span *ngIf="passwordInvalido"></span>
 
-<router-outlet></router-outlet>
+<div>
+    <button (click)="enviar(email.value, password.value)" [disabled]="email && password">
+        ENVIAR
+    </button>
+</div>
