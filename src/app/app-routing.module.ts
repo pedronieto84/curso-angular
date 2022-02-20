@@ -13,19 +13,19 @@ const routes: Routes = [
   },
   {
     path: 'array',
-    component: ArrayFormComponent,
+    loadChildren: ()=> import('./components/forms/array-form/array-form.module').then((m => m.ArrayFormModule))
   },
   {
     path: 'nested',
-    component: NestedFormComponent,
+    loadChildren: ()=> import('./components/forms/nested-form/nested-form.module').then((m => m.NestedFormModule))
   },
   {
     path: 'submit',
-    component: SubmitFormComponent,
+    loadChildren: ()=> import('./components/forms/submit-form/submit-form.module').then((m => m.SubmitFormModule))
   },
   {
     path: 'valid',
-    component: ValidFormComponent,
+    loadChildren: ()=> import('./components/forms/valid-form/valid-form.module').then((m => m.ValidFormModule))
   },
   {
     path: '**',

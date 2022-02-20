@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes , RouterModule} from '@angular/router';
 import { NestedFormComponent } from './nested-form.component';
-import { ReactiveFormsModule } from '@angular/forms';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input'
 const routes: Routes = [
   {
     path: '',
@@ -13,10 +14,13 @@ const routes: Routes = [
 
 
 @NgModule({
-  declarations: [],
+  declarations: [NestedFormComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
     RouterModule.forChild(routes)
   ]
 })

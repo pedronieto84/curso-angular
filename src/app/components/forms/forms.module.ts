@@ -11,7 +11,6 @@ import { ValidFormComponent } from './valid-form/valid-form.component';
 @NgModule({
   declarations: [
     ArrayFormComponent,
-    NestedFormComponent,
     SubmitFormComponent,
     ValidFormComponent
   ],

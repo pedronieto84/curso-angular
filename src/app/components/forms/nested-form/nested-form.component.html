@@ -1,1 +1,29 @@
-<p>nested-form works!</p>
+<h1>NESTED FORMS</h1>
+<form [formGroup]="myForm">
+  <hr />
+  <mat-form-field>
+    <input matInput placeholder="email" formControlName="email" >
+  </mat-form-field>
+
+  <h4>Teléfono fijo</h4>
+  <div formGroupName="telefono_casa">
+    <mat-form-field>
+      <input matInput formControlName="prefijo" placeholder="Prefijo" >
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput formControlName="numero" placeholder="Numero" >
+    </mat-form-field>
+  </div>
+
+  <h4>Teléfono Movil</h4>
+  <div formGroupName="telefono_movil">
+    <mat-form-field>
+      <input matInput formControlName="prefijo" placeholder="Prefijo" >
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput formControlName="numero" placeholder="Numero" >
+    </mat-form-field>
+  </div>
+</form>
+
+<h1>Formulario {{ myForm.value | json}}</h1>

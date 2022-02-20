@@ -11,7 +11,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [],
+  declarations: [ValidFormComponent],
   imports: [RouterModule.forChild(routes), ReactiveFormsModule, CommonModule],
 })
 export class ValidFormModule {}

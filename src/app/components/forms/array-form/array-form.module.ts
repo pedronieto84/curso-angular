@@ -11,7 +11,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [],
+  declarations: [ArrayFormComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes)
