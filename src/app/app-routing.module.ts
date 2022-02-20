@@ -9,7 +9,7 @@ import { ValidFormComponent } from './components/forms/valid-form/valid-form.com
 const routes: Routes = [
   {
     path: '',
-    component: BasicFormComponent,
+    loadChildren: ()=> import('./components/forms/basic-form/basic-form.module').then((m => m.BasicFormModule))
   },
   {
     path: 'array',

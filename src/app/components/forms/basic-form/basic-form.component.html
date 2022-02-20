@@ -1,1 +1,22 @@
-<p>basic-form works!</p>
+<h1>BASIC FORM</h1>
+
+<form [formGroup]="myForm">
+  
+
+    <mat-form-field>
+        <input matInput placeholder="email" formControlName="email">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Mensaje..." formControlName="mensaje">
+    </mat-form-field>
+    <mat-form-field >
+        <mat-select formControlName="profesion" placeholder="profesion">
+            <mat-option *ngFor="let job of jobs" [value]="job">
+                {{job}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+</form>
+
+
+Valor Formulario : {{ myForm.value | json}}
