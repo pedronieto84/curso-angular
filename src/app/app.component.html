@@ -1,12 +1,8 @@
-<button mat-button routerLink="/">Basic</button>
+<div>
+  
+</div>
+<button *ngFor="let r of routesArray" mat-button 
+[routerLink]="r.url" >{{r.displayName}}</button>
 
 
-<button mat-button  routerLink="/array">Array</button>
-
-
-<button mat-button  routerLink="/nested">Nested</button>
-
-
-<button mat-button  routerLink="/submit">Submit</button>
-<button mat-button  routerLink="/valid">Valid</button>
 <router-outlet></router-outlet>
