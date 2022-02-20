@@ -41,7 +41,7 @@ export class ArrayFormComponent implements OnInit {
     console.log('aqui hago la inserción a la base de datos mediante promesa');
 
     try {
-      await this.simulacionHttp.httpCall(true);
+      await this.simulacionHttp.httpCall(false); // si es false, se auto eliminan
       this.openSnackbar('Datos Recibidos correctamente', 'OK', 'success')
     } catch (e) {
       this.phoneForms.removeAt(this.phoneForms.length - 1);
@@ -56,7 +56,7 @@ export class ArrayFormComponent implements OnInit {
     this.phoneForms.removeAt(i)
     console.log('Aqui hago el delete de la base de datos mediante promise o observable')
     try {
-      const respServer = await this.simulacionHttp.httpCallRemove(true)
+      const respServer = await this.simulacionHttp.httpCallRemove(false) // si es false se autoeliminan
       if(respServer){
         this.openSnackbar('Datos Eliminados correctamente', 'OK', 'success')
       }

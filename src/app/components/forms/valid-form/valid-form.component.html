@@ -1,1 +1,76 @@
-<p>valid-form works!</p>
+<div class="padding">
+    <p>valid-form works!</p>
+
+    <form [formGroup]="myForm">
+    
+        <mat-form-field>
+            <input matInput placeholder="email" formControlName="email"> 
+            <mat-error *ngIf="email?.invalid && email?.touched">
+                Email incorrecto
+            </mat-error>
+        </mat-form-field>
+        <hr>
+    
+        <mat-form-field>
+            <input matInput placeholder="password" formControlName="password">
+            <mat-hint>Debe tener entre 4 y 8 caracteres</mat-hint>
+            <mat-error *ngIf="password?.invalid && password?.touched">
+                Contraseña incorrecta
+            </mat-error>
+        </mat-form-field>
+    
+    <hr>
+    
+    <mat-form-field>
+        <input matInput placeholder="Edad" [value]="0" formControlName="edad">
+        <mat-error *ngIf="edad?.errors?.['min'] && edad?.touched">
+            {{edad?.errors?.['min'].actual}} es demasiado joven
+        </mat-error>
+        <mat-error *ngIf="edad?.errors?.['max'] && edad?.touched">
+            {{edad?.errors?.['max'].actual}} es demasiado mayor
+        </mat-error>
+    </mat-form-field>
+    <hr>
+    <mat-checkbox formControlName="OK" color="primary"> 
+        Estás seguro?
+    </mat-checkbox>
+
+    <button mat-raised-button [disabled]="myForm.invalid" color="primary">
+        REGISTRARME
+    </button>
+    
+    </form>
+
+    <hr>
+    Value: {{ myForm.value | json}}
+</div>
+
+<div>TODOS LOS VALIDATORS</div>
+<h2>Valid {{
+    myForm.valid
+}}
+</h2>
+<h2>Invalid {{
+    myForm.invalid
+}}
+</h2>
+<h2>Dirty {{
+    myForm.dirty
+}}
+</h2>
+<h2>Pristine {{
+    myForm.pristine
+}}
+</h2>
+<h2>Touched {{
+    myForm.touched
+}}
+</h2>
+<h2>Untouched {{
+    myForm.untouched
+}}
+</h2>
+<h2>Pending {{
+    myForm.pending
+}}
+</h2>

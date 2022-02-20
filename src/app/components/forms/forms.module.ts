@@ -7,7 +7,7 @@ import { SubmitFormComponent } from './submit-form/submit-form.component';
 import { ValidFormComponent } from './valid-form/valid-form.component';
 
 @NgModule({
-  declarations: [SubmitFormComponent, ValidFormComponent],
+  declarations: [],
   imports: [CommonModule],
   exports: [],
 })
