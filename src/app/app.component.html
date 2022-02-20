@@ -1,8 +1,9 @@
-<div>
-  
-</div>
-<button *ngFor="let r of routesArray" mat-button 
-[routerLink]="r.url" >{{r.displayName}}</button>
+
+<button *ngFor="let r of routesArray" 
+mat-button 
+[routerLinkActiveOptions]="{ exact: true }"
+[routerLink]="r.url" 
+routerLinkActive="active" >{{r.displayName}}</button>
 
 
 <router-outlet></router-outlet>
