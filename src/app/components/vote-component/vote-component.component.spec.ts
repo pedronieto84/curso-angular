@@ -45,5 +45,16 @@ describe('VoteComponentComponent', () => {
 
   })
 
+  it('el botón sube los votos totales', ()=>{
+   
+
+    let button = fixture.debugElement.query(By.css('.button')) // Encuentro el primer elmento que tenga esa clase
+    button.triggerEventHandler('click', null) // Fuerzo un click
+
+   
+    expect(component.totalVotes).toBe(1) // Si quito el any da un pequeño error de typado de interface, no se exactamente por que.
+
+  })
+
 
 });
