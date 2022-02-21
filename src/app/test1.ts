@@ -9,3 +9,7 @@ export function compute(number: number){
 export function bienvenido(nombre: string){
     return 'Bienvenido '+nombre
 }
+
+export function monedas(){
+    return ['USD', 'AUD', 'EUR']
+}

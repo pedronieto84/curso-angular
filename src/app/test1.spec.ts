@@ -1,4 +1,4 @@
-import { compute, bienvenido } from './test1'
+import { compute, bienvenido,monedas } from './test1'
 
 describe('compute', ()=>{
     
@@ -19,5 +19,15 @@ describe('felicitar',()=>{
     it('deberia incluir el nombre en el mensaje',()=>{
         const mensaje = bienvenido('Juan')
         expect(mensaje).toContain('Juan')
+    })
+})
+
+// Ejemplo con arrays
+describe('monedas', () => {
+    it('debe devolver las monedas soportadas',()=>{
+        const result = monedas()
+        expect(result).toContain('USD')
+        expect(result).toContain('EUR')
+        expect(result).toContain('AUD')
     })
 })
