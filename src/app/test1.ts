@@ -5,3 +5,7 @@ export function compute(number: number){
         return number + 1
     }
 }
+
+export function bienvenido(nombre: string){
+    return 'Bienvenido '+nombre
+}

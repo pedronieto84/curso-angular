@@ -1,4 +1,4 @@
-import { compute } from './test1'
+import { compute, bienvenido } from './test1'
 
 describe('compute', ()=>{
     
@@ -14,3 +14,10 @@ it('debe incrementar el input si le incremento input', ()=>{
 })
 
 }) // suite de tests
+
+describe('felicitar',()=>{
+    it('deberia incluir el nombre en el mensaje',()=>{
+        const mensaje = bienvenido('Juan')
+        expect(mensaje).toContain('Juan')
+    })
+})
