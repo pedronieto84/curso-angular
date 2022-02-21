@@ -25,19 +25,19 @@ describe('VoteComponentComponent', () => {
     
   });
 
-  it('should create', () => {
+  xit('should create', () => {
     expect(component).toBeTruthy();
   });
 
 
-  it('debería crear un formulario con 2 controles', () => {
+  xit('debería crear un formulario con 2 controles', () => {
 
     // Arrange
     expect(component.form.contains('name')).toBeTruthy()
     expect(component.form.contains('email')).toBeTruthy()
   });
 
-  it('debería tener name control required', () => {
+  xit('debería tener name control required', () => {
 
     // Act
     let name = component.form.get('name')
@@ -48,7 +48,7 @@ describe('VoteComponentComponent', () => {
 
   });
 
-  it('debería evaluar que email es un email', () => {
+  xit('debería evaluar que email es un email', () => {
 
     // Act
     let email = component.form.get('email')
@@ -60,7 +60,7 @@ describe('VoteComponentComponent', () => {
   });
 
   // Evaluar el event emitter
-  it('deberia subir el cambioVotos cuando se vota',  ()=>{
+  xit('deberia subir el cambioVotos cuando se vota',  ()=>{
     // Event emitters son observables así que podemos subscribirnos
     // Arrange
     let totalVotes = null
