@@ -7,6 +7,8 @@ describe('VoteComponentComponent', () => {
   let component: VoteComponentComponent;
   let fixture: ComponentFixture<VoteComponentComponent>;
 
+  
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [VoteComponentComponent],
@@ -18,26 +20,27 @@ describe('VoteComponentComponent', () => {
     // Arrange (esto es cómo instanciar una clase)
     
     fixture = TestBed.createComponent(VoteComponentComponent);
-
+    let html = fixture.nativeElement 
+    console.log('HTML of COMPONENt', html);
     // Act
     component = fixture.componentInstance;
     fixture.detectChanges();
     
   });
 
-  xit('should create', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 
 
-  xit('debería crear un formulario con 2 controles', () => {
+  it('debería crear un formulario con 2 controles', () => {
 
     // Arrange
     expect(component.form.contains('name')).toBeTruthy()
     expect(component.form.contains('email')).toBeTruthy()
   });
 
-  xit('debería tener name control required', () => {
+  it('debería tener name control required', () => {
 
     // Act
     let name = component.form.get('name')
@@ -48,7 +51,7 @@ describe('VoteComponentComponent', () => {
 
   });
 
-  xit('debería evaluar que email es un email', () => {
+  it('debería evaluar que email es un email', () => {
 
     // Act
     let email = component.form.get('email')
@@ -60,7 +63,7 @@ describe('VoteComponentComponent', () => {
   });
 
   // Evaluar el event emitter
-  xit('deberia subir el cambioVotos cuando se vota',  ()=>{
+  it('deberia subir el cambioVotos cuando se vota',  ()=>{
     // Event emitters son observables así que podemos subscribirnos
     // Arrange
     let totalVotes = null
