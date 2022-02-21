@@ -58,4 +58,18 @@ describe('VoteComponentComponent', () => {
     expect(email?.valid).toBeTruthy()
 
   });
+
+  // Evaluar el event emitter
+  it('deberia subir el cambioVotos cuando se vota',  ()=>{
+    // Event emitters son observables así que podemos subscribirnos
+    // Arrange
+    let totalVotes = null
+    component.cambioVotos.subscribe(v => totalVotes = v)
+
+    // Act
+    component.subirVoto()
+
+    // Assert
+    expect(totalVotes).not.toBeNull()
+  })
 });
