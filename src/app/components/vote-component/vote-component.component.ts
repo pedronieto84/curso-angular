@@ -1,21 +1,24 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-vote-component',
   templateUrl: './vote-component.component.html',
   styleUrls: ['./vote-component.component.scss']
 })
-export class VoteComponentComponent {
+export class VoteComponentComponent implements OnInit {
 
-  votosTotales = 0
+  form!:FormGroup
 
+  constructor(public fb: FormBuilder){
 
-  subirVoto(){
-    this.votosTotales +=1
   }
 
-  bajarVoto(){
-    this.votosTotales -=1
+  ngOnInit(): void {
+    this.form = this.fb.group({
+      name:['', Validators.required],
+      email: ['', [Validators.email, Validators.required] ]
+ })
   }
 
 }
