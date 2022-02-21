@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import {By} from '@angular/platform-browser'
 
 import { VoteComponentComponent } from './vote-component.component';
 
@@ -20,10 +21,8 @@ describe('VoteComponentComponent', () => {
     // Arrange (esto es cómo instanciar una clase)
     
     fixture = TestBed.createComponent(VoteComponentComponent);
-    let html = fixture.nativeElement 
-    console.log('HTML of COMPONENt', html);
     // Act
-    component = fixture.componentInstance;
+    component = fixture.componentInstance; // Simula un componente
     fixture.detectChanges();
     
   });
@@ -32,47 +31,19 @@ describe('VoteComponentComponent', () => {
     expect(component).toBeTruthy();
   });
 
-
-  it('debería crear un formulario con 2 controles', () => {
-
-    // Arrange
-    expect(component.form.contains('name')).toBeTruthy()
-    expect(component.form.contains('email')).toBeTruthy()
-  });
-
-  it('debería tener name control required', () => {
-
-    // Act
-    let name = component.form.get('name')
-    name?.setValue('')
-
-    // Assert
-    expect(name?.valid).toBeFalsy()
-
-  });
-
-  it('debería evaluar que email es un email', () => {
-
-    // Act
-    let email = component.form.get('email')
-    email?.setValue('pedro@gmail.com')
-
-    // Assert
-    expect(email?.valid).toBeTruthy()
-
-  });
-
-  // Evaluar el event emitter
-  it('deberia subir el cambioVotos cuando se vota',  ()=>{
-    // Event emitters son observables así que podemos subscribirnos
-    // Arrange
-    let totalVotes = null
-    component.cambioVotos.subscribe(v => totalVotes = v)
-
-    // Act
+  it('deberia mostrar voto subido', ()=>{
+    component.totalVotes = 10
     component.subirVoto()
 
-    // Assert
-    expect(totalVotes).not.toBeNull()
+    fixture.detectChanges() // Debo explicitamente angular que fuerce la detección de cambios
+
+    let de = fixture.debugElement.query(By.css('.subirVoto')) // Encuentro el primer elmento que tenga esa clase
+
+    let el:HTMLElement = de.nativeElement // Por algún motivo esta la ponen como any, y para tener intelissense, le decimos que es de tipo HTMLelement
+    console.log(el.innerText);
+    expect(el.innerText).toEqual('11' as any) // Si quito el any da un pequeño error de typado de interface, no se exactamente por que.
+
   })
+
+
 });
