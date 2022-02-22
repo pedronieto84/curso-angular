@@ -9,9 +9,9 @@
     "test": "ng test",
     "co": "cypress open",
     "cr": "cypress run",
-    "prod": "ng build --prod",
+    "prod": "ng build --prod", 
     "launch": "http-server ./dist/curso-angular -p 4200",
-    "ci": "run-s prod launch",
+    "ci": "npm run prod && npm run launch",
     "e2e": "start-server-and-test ci http://localhost:4200 cr"
   },
   "private": true,
