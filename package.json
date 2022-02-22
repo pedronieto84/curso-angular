@@ -10,7 +10,7 @@
     "co": "cypress open",
     "cr": "cypress run",
     "prod": "ng build --prod",
-    "launch": "http-server ./dist -p 4200",
+    "launch": "http-server ./dist/curso-angular -p 4200",
     "ci": "run-s prod launch",
     "e2e": "start-server-and-test ci http://localhost:4200 cr"
   },
