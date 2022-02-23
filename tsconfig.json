@@ -9,6 +9,16 @@
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
+    "paths": {
+      "login-icaro123123": [
+        "dist/login-icaro123123/login-icaro123123",
+        "dist/login-icaro123123"
+      ],
+      "login-icaro2302": [
+        "dist/login-icaro2302/login-icaro2302",
+        "dist/login-icaro2302"
+      ]
+    },
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "declaration": false,
