@@ -10,7 +10,8 @@ import { LoginIcaro2302Component } from './login-icaro2302.component';
   imports: [
   ],
   exports: [
-    LoginIcaro2302Component
+    LoginIcaro2302Component,
+    
   ]
 })
 export class LoginIcaro2302Module { }

@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "build:login-icaro2302": "ng build login-icaro2302 && cd dist/login-icaro2302 && npm publish"
   },
   "private": true,
   "dependencies": {

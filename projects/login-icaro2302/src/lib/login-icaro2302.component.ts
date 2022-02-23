@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'lib-login-icaro2302',
   template: `
     <div>
-      Email sdfgsdgsd fg<input #email type="text" >
+      Email 4<input #email type="text" >
       Password<input #password type="password" >
       <button (click)="enviar(email.value, password.value)">ENVIAR</button>
 </div>
