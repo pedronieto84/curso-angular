@@ -28,7 +28,7 @@ describe('VoteComponentComponent', () => {
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(component).toBeFalsy();
   });
 
   it('deberia mostrar voto subido', ()=>{
