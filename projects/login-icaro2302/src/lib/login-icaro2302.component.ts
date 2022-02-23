@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { GoogleChartInterface, GoogleChartType } from 'ng2-google-charts';
 @Component({
   selector: 'lib-login-icaro2302',
@@ -8,26 +8,32 @@ import { GoogleChartInterface, GoogleChartType } from 'ng2-google-charts';
       Password<input #password type="password" >
       <button (click)="enviar(email.value, password.value)">ENVIAR</button>
 </div>
-<div><google-chart [data]="pieChart"></google-chart></div>
+<div>
+  
+<google-chart *ngIf="dataChart; else loading" [data]="pieChart"></google-chart></div>
+
+<<ng-template #loading>LOADING</ng-template>
   `,
   styles: [
   ]
 })
-export class LoginIcaro2302Component  {
+export class LoginIcaro2302Component implements  OnChanges {
 
-  public pieChart: GoogleChartInterface = {
-    chartType: GoogleChartType.PieChart,
-    dataTable: [
-      ['Task', 'Hours per Day'],
-      ['Work',     1],
-      ['Eat',      2],
-      ['Commute',  2],
-      ['Watch TV', 2],
-      ['Sleep',    7]
-    ],
-    //firstRowIsData: true,
-    options: {'title': 'Tasks'},
-  };
+  @Input() dataChart!: (string | number)[][]
+
+  ngOnChanges(changes: SimpleChanges): void {
+      if(changes){
+        console.log(this.dataChart);
+        this.pieChart = {
+          chartType: GoogleChartType.PieChart,
+          dataTable: this.dataChart,
+          //firstRowIsData: true,
+          options: {'title': 'Tasks'},
+        }
+      }
+  }
+  
+  public pieChart!: GoogleChartInterface;
 
   nombre = 'juan'
   enviar(email:string, password:string){

@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 import { LoginIcaro2302Component } from './login-icaro2302.component';
@@ -10,6 +11,7 @@ import { LoginIcaro2302Component } from './login-icaro2302.component';
 
   ],
   imports: [
+    CommonModule,
     Ng2GoogleChartsModule
   ],
   exports: [
