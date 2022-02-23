@@ -8,11 +8,11 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "prod": "ng build --prod",
-     
+    "test-without-browser": "ng test --browsers ChromeHeadless",
     "co": "cypress open",
     "cr": "cypress run",
     "launch": "http-server ./dist/curso-angular -p 4200",
-    "ci": "npm run test && npm run prod && npm run launch",
+    "ci": "npm run test-without-browser && npm run prod && npm run launch",
     "e2e": "start-server-and-test ci http://localhost:4200 cr"
   },
   "private": true,
