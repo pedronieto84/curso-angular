@@ -4,7 +4,7 @@ import { GoogleChartInterface, GoogleChartType } from 'ng2-google-charts';
   selector: 'lib-login-icaro2302',
   template: `
     <div>
-      Email 4<input #email type="text" >
+      Email 15<input #email type="text" >
       Password<input #password type="password" >
       <button (click)="enviar(email.value, password.value)">ENVIAR</button>
 </div>
@@ -12,7 +12,7 @@ import { GoogleChartInterface, GoogleChartType } from 'ng2-google-charts';
   
 <google-chart *ngIf="dataChart; else loading" [data]="pieChart"></google-chart></div>
 
-<<ng-template #loading>LOADING</ng-template>
+<ng-template #loading>LOADING</ng-template>
   `,
   styles: [
   ]
