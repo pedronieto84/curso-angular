@@ -10,7 +10,7 @@ describe('LoginIcaro2302Service', () => {
     service = TestBed.inject(LoginIcaro2302Service);
   });
 
-  it('should be created', () => {
+  it('should be created lib login', () => {
     expect(service).toBeTruthy();
   });
 });
