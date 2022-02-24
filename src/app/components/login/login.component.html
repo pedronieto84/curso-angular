@@ -1,11 +1,9 @@
-<p>LOGIN DE LAS 10:26</p>
+<p>LOGIN DE LAS 16:34</p>
 <form [formGroup]="form">
-    <input type="text" formControlName="email">
-    <input type="password" formControlName="password">
-    
-    <button id="button" (click)="enviar()" name="enviar">Enviar</button>
+  <input type="text" formControlName="email" />
+  <input type="password" formControlName="password" />
 
+  <button id="button" (click)="enviar()" name="enviar">Enviar</button>
 </form>
 
-
-<pre id="mostrarData">{{ {email, password } | json}}</pre>
+<pre id="mostrarData">{{ {email, password } | json }}</pre>
